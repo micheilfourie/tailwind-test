@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const Hero = () => {
 
-    const [bigShoeImg, setBigShoeImg] = useState(bigShoe1)
+    const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
 
     return (
         <section
@@ -17,16 +17,16 @@ const Hero = () => {
             <div className="relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:padding-x pt-28">
                 <p className="text-xl font-montserrat text-coral-red">Our Summer Collection</p>
                 <h1 className="mt-10 font-palanquin text-8xl max-sm:text-[72px] max-sm:leading-[82] font-bold">
-                    <span className="xl:bg-white xl:whitespace-nowrap relative z-10 pr-10">The New Arrival</span>
+                    <span className="xl:bg-white xl:whitespace-nowrap rounded-full  relative z-10 pr-10">The New Arrival</span>
                     <br />
                     <span className="text-coral-red inline-block mt-3">Nike</span> Shoes</h1>
                 <p className="font-montserrat text-slate-gray text-lg leading-8 mt-6 mb-14 sm:max-w-sm">Discover stylish Nike arrivals, quality comfort, and innovation for your active life.</p>
                 <Button label="Shop Now" iconURL={arrowRight} />
                 <div className="flex justify-start items-start flex-wrap w-full mt-20 gap-16">
-                    {statistics.map(({ value, label }) => (
-                        <div key={label}>
-                            <p className="font-palanquin text-4xl font-bold">{value}</p>
-                            <p className="leading-7 font-montserrat text-slate-gray">{label}</p>
+                    {statistics.map((stat) => (
+                        <div key={stat.label}>
+                            <p className="font-palanquin text-4xl font-bold">{stat.value}</p>
+                            <p className="leading-7 font-montserrat text-slate-gray">{stat.label}</p>
                         </div>
                     ))}
                 </div>
@@ -45,7 +45,7 @@ const Hero = () => {
                     ))}
                 </div>
             </div>
-        </section>
+        </section >
     )
 }
 
